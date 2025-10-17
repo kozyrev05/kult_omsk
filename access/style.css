@@ -4,6 +4,7 @@ body {
     padding: 0;
     background: #fdfaf6 url('https://www.transparenttextures.com/patterns/parchment.png');
     color: #2e2e2e;
+    font-size: 18px;
 }
 
 header {
@@ -160,4 +161,15 @@ footer {
 
 .button-24:active {
   opacity: .5;
+}
+
+
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: #FFFFFF;
+}
+a:hover {
+    color: #6c4e31;
 }
