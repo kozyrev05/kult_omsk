@@ -5,11 +5,19 @@ body {
     background: #fdfaf6 url('https://www.transparenttextures.com/patterns/parchment.png');
     color: #2e2e2e;
     font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Центровка контента */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header {
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 1rem;
     background: #6c4e31;
     color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -27,13 +35,14 @@ header p {
 }
 
 main {
-    padding: 2rem;
+    padding: 2rem 0;
 }
 
 section {
     margin-bottom: 3rem;
 }
 
+/* Галерея */
 .gallery .photos {
     display: flex;
     gap: 1rem;
@@ -42,7 +51,8 @@ section {
 }
 
 .gallery img {
-    width: 400px;
+    width: 100%;
+    max-width: 380px;
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
@@ -51,6 +61,7 @@ section {
     transform: scale(1.05);
 }
 
+/* Статьи */
 article {
     background: #fff;
     padding: 1rem;
@@ -70,8 +81,11 @@ article:hover {
     color: #6c4e31;
 }
 
+/* Карточки учреждений */
 .event-card {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 1rem;
     background: #fff;
     padding: 1rem;
@@ -86,10 +100,15 @@ article:hover {
 }
 
 .event-card img {
-    width: 200px;
-    height: 140px;
-    object-fit: cover;
+    flex: 1 1 250px;
+    max-width: 250px;
+    height: auto;
     border-radius: 8px;
+    object-fit: cover;
+}
+
+.event-info {
+    flex: 2 1 400px;
 }
 
 .event-info h3 {
@@ -98,12 +117,7 @@ article:hover {
 }
 
 .event-info p {
-    margin: 0.5rem 0;
-}
-
-.event-info time {
-    font-weight: bold;
-    color: #b33a3a;
+    margin: 0.5rem 0 1rem;
 }
 
 footer {
@@ -114,8 +128,63 @@ footer {
     font-size: 0.9rem;
 }
 
+.button-24 { 
+    background: #6c4e31; 
+    border: 1px solid #6c4e31; 
+    border-radius: 6px; 
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px; 
+    box-sizing: border-box; 
+    color: #FFFFFF; 
+    cursor: pointer; 
+    display: inline-block; 
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif; 
+    font-size: 16px; 
+    font-weight: 800; 
+    line-height: 16px; 
+    min-height: 40px; 
+    outline: 0; 
+    padding: 12px 14px; 
+    text-align: center; 
+    text-rendering: geometricprecision; 
+    text-transform: none; 
+    user-select: none; 
+    -webkit-user-select: none; 
+    touch-action: manipulation; 
+    vertical-align: middle; 
+}
 
 
+
+.DA:link,
+.DA:visited{
+    text-decoration: none;
+    color: #6c4e31;
+
+}
+
+.button-24:hover, 
+.button-24:active { 
+    background-color: initial; 
+    background-position: 0 0; color: #6c4e31; 
+} 
+
+.button-24:active { 
+    opacity: .5; 
+} 
+
+a { 
+    text-decoration: none; 
+} 
+
+a:link, 
+a:visited 
+{ color: #FFFFFF; 
+} 
+a:hover { 
+    color: #6c4e31; 
+}
+
+/* Анимации */
 @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -126,50 +195,19 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* CSS */
-.button-24 {
-  background: #6c4e31;
-  border: 1px solid #6c4e31;
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 16px;
-  min-height: 40px;
-  outline: 0;
-  padding: 12px 14px;
-  text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
+/* Мобильная адаптация */
+@media (max-width: 900px) {
+    .gallery img { max-width: 45%; }
+    .event-card { flex-direction: column; text-align: center; }
+    .event-card img { max-width: 100%; }
 }
 
-.button-24:hover,
-.button-24:active {
-  background-color: initial;
-  background-position: 0 0;
-  color: #6c4e31;
-}
-
-.button-24:active {
-  opacity: .5;
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    header p { font-size: 1rem; }
+    body { font-size: 16px; }
+    .gallery img { max-width: 100%; }
+    .event-card { padding: 1rem; }
 }
 
 
-a {
-    text-decoration: none;
-}
-a:link, a:visited {
-    color: #FFFFFF;
-}
-a:hover {
-    color: #6c4e31;
-}
